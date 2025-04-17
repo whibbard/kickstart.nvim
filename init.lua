@@ -672,11 +672,61 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        solargraph = {},
+        -- ruby_ls = {
+        --   -- This is forcing it to fail... only way I've gotten this to disable
+        --   -- cmd = { 'bundle', 'exec', 'ruby-lsp' },
+        --   mason = false,
+        --   -- settings = {
+        --   --   initializationOptions = {
+        --   --     enabledFeatures = {
+        --   --       codeActions = true,
+        --   --       codeLens = true,
+        --   --       completion = true,
+        --   --       definition = true,
+        --   --       diagnostics = false,
+        --   --       documentHighlights = true,
+        --   --       documentLink = true,
+        --   --       documentSymbols = true,
+        --   --       foldingRanges = true,
+        --   --       formatting = true,
+        --   --       hover = true,
+        --   --       inlayHint = true,
+        --   --       onTypeFormatting = true,
+        --   --       selectionRanges = true,
+        --   --       semanticHighlighting = true,
+        --   --       signatureHelp = true,
+        --   --       typeHierarchy = true,
+        --   --       workspaceSymbol = true,
+        --   --     },
+        --   --     featuresConfiguration = {
+        --   --       inlayHint = {
+        --   --         implicitHashValue = true,
+        --   --         implicitRescue = true,
+        --   --       },
+        --   --     },
+        --   --     -- indexing = {
+        --   --     --   excludedPatterns = {"path/to/excluded/file.rb"},
+        --   --     --   includedPatterns = {"path/to/included/file.rb"},
+        --   --     --   excludedGems = {"gem1", "gem2", "etc."},
+        --   --     --   excludedMagicComments = {"compiled:true"},
+        --   --     -- },
+        --   --     formatter = 'auto',
+        --   --     linters = {},
+        --   --   },
+        --   -- },
+        -- },
+        -- rubocop = {},
+        -- solargraph = {
+        --   mason = false,
+        --   enabled = false,
+        -- },
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
+        -- Seems to be broken, will need to resolve at a later date
+        -- LSP issues in general asa observed with ruby_ls
+        -- kotlin_language_server = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:

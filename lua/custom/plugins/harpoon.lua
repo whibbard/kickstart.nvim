@@ -10,7 +10,8 @@ return {
     { '<leader>hn', "<cmd>lua require('harpoon.ui').nav_next()<cr>", desc = 'Go to next harpoon mark' },
     { '<leader>hp', "<cmd>lua require('harpoon.ui').nav_prev()<cr>", desc = 'Go to previous harpoon mark' },
     { '<leader>ha', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = 'Show harpoon marks' },
-    { '<leader>ht', "<cmd>lua require('harpoon.term').gotoTerminal(1)<cr>", desc = 'Open harpoon terminal' },
+    -- Disabling harpoon term as I have been using tmux and that's been more consistent.
+    -- { '<leader>ht', "<cmd>lua require('harpoon.term').gotoTerminal(1)<cr>", desc = 'Open harpoon terminal' },
     { '<leader>h1', "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = 'Navigate to mark 1' },
     { '<leader>h2', "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = 'Navigate to mark 2' },
     { '<leader>h3', "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = 'Navigate to mark 3' },
