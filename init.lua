@@ -672,54 +672,16 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- ruby_lsp = {
-        --   -- This is forcing it to fail... only way I've gotten this to disable
-        --   -- cmd = { 'bundle', 'exec', 'ruby-lsp' },
-        --   mason = false,
-        --   -- settings = {
-        --   --   initializationOptions = {
-        --   --     enabledFeatures = {
-        --   --       codeActions = true,
-        --   --       codeLens = true,
-        --   --       completion = true,
-        --   --       definition = true,
-        --   --       diagnostics = false,
-        --   --       documentHighlights = true,
-        --   --       documentLink = true,
-        --   --       documentSymbols = true,
-        --   --       foldingRanges = true,
-        --   --       formatting = true,
-        --   --       hover = true,
-        --   --       inlayHint = true,
-        --   --       onTypeFormatting = true,
-        --   --       selectionRanges = true,
-        --   --       semanticHighlighting = true,
-        --   --       signatureHelp = true,
-        --   --       typeHierarchy = true,
-        --   --       workspaceSymbol = true,
-        --   --     },
-        --   --     featuresConfiguration = {
-        --   --       inlayHint = {
-        --   --         implicitHashValue = true,
-        --   --         implicitRescue = true,
-        --   --       },
-        --   --     },
-        --   --     -- indexing = {
-        --   --     --   excludedPatterns = {"path/to/excluded/file.rb"},
-        --   --     --   includedPatterns = {"path/to/included/file.rb"},
-        --   --     --   excludedGems = {"gem1", "gem2", "etc."},
-        --   --     --   excludedMagicComments = {"compiled:true"},
-        --   --     -- },
-        --   --     formatter = 'auto',
-        --   --     linters = {},
-        --   --   },
-        --   -- },
-        -- },
+        ruby_lsp = {},
         -- rubocop = {},
-        solargraph = {
-          -- mason = false,
-          enabled = false,
-        },
+        -- solargraph = {
+        --   settings = {
+        --     solargraph = {
+        --       diagnostics = true,
+        --       completion = true,
+        --     },
+        --   },
+        -- },
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
