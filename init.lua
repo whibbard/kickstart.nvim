@@ -672,7 +672,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- ruby_ls = {
+        -- ruby_lsp = {
         --   -- This is forcing it to fail... only way I've gotten this to disable
         --   -- cmd = { 'bundle', 'exec', 'ruby-lsp' },
         --   mason = false,
@@ -716,25 +716,25 @@ require('lazy').setup({
         --   -- },
         -- },
         -- rubocop = {},
-        -- solargraph = {
-        --   mason = false,
-        --   enabled = false,
-        -- },
+        solargraph = {
+          -- mason = false,
+          enabled = false,
+        },
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- Seems to be broken, will need to resolve at a later date
         -- LSP issues in general asa observed with ruby_ls
-        java_language_server = {},
-        kotlin_language_server = {},
+        -- java_language_server = {},
+        -- kotlin_language_server = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
+        -- ts_ls = {}, (whibbard: remove for now... until needed)
         --
 
         lua_ls = {
@@ -769,7 +769,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'ktlint',
+        -- 'ktlint',
         -- 'checkstyle', -- Java linter
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -823,7 +823,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        kotlin = { 'ktlint' },
+        -- kotlin = { 'ktlint' },
         -- java = { 'checkstyle' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
@@ -1023,10 +1023,10 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+    -- main = 'nvim-treesitter.configs', -- Sets main module to use for opts (whibbard: may be outdated)
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'kotlin' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'ruby', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'kotlin' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
